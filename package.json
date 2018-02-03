@@ -1,0 +1,22 @@
+{
+  "name": "complex-to-plain-table",
+  "version": "1.0.0",
+  "description": "Simplify complex tables by splitting merged cells",
+  "main": "src/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drazenp/complex-to-plain-table.git"
+  },
+  "author": "Drazen Pupovac",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drazenp/complex-to-plain-table/issues"
+  },
+  "homepage": "https://github.com/drazenp/complex-to-plain-table#readme"
+}
