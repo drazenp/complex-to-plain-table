@@ -7,7 +7,7 @@ var fs = require('fs');
 var _table = fs.readFileSync('./test/plaintable.html', 'utf8');
 
 describe('toPlainTable', function () {
-    describe('Plain table', function () {
+    describe('plain table', function () {
         beforeEach(function () {
             document.body.innerHTML = _table;
         });
