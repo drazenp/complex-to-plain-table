@@ -13,6 +13,13 @@ describe('toPlainTable', function () {
         });
 
         it('has equal number of cells in rows', function () {
+            // arrange
+            var table = document.querySelector('table');
+
+            // act
+            toPlainTable(table);
+
+            // assert
             var rows = document.querySelectorAll('tr');
             assert.equal(rows[0].querySelectorAll('th').length, 3);
             assert.equal(rows[1].querySelectorAll('td').length, 3);
@@ -20,6 +27,13 @@ describe('toPlainTable', function () {
         });
 
         it('cells have no rowspan or calspan attributes', function () {
+            // arrange
+            var table = document.querySelector('table');
+
+            // act
+            toPlainTable(table);
+
+            // assert
             var rows = document.querySelectorAll('tr');
             rows[0].querySelectorAll('th').forEach(th => {
                 assert.equal(th.hasAttribute('colspan'), false);

@@ -13,11 +13,25 @@ describe('toPlainTable', function () {
 
     describe('table with calspan 2 in header', function () {
         it('has equal number of cells in the rows', function () {
+            // arrange
+            var table = document.querySelector('table');
+
+            // act
+            toPlainTable(table);
+
+            // assert
             var rows = document.querySelectorAll('tr');
             assert.equal(rows[0].querySelectorAll('th').length, 3);
             assert.equal(rows[1].querySelectorAll('td').length, 3);
         });
         it('cells have no rowspan or calspan attributes', function () {
+            // arrange
+            var table = document.querySelector('table');
+
+            // act
+            toPlainTable(table);
+
+            // assert
             var rows = document.querySelectorAll('tr');
             rows[0].querySelectorAll('th').forEach(th => {
                 assert.equal(th.hasAttribute('colspan'), false);
@@ -29,6 +43,13 @@ describe('toPlainTable', function () {
             });
         });
         it('colspan content is replicated', function () {
+            // arrange
+            var table = document.querySelector('table');
+
+            // act
+            toPlainTable(table);
+
+            // assert
             var headerCells = document.querySelectorAll('tr')[0].querySelectorAll('th');
             assert.equal(headerCells[0].innerHTML, '1');
             assert.equal(headerCells[1].innerHTML, '23');
