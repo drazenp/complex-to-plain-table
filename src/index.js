@@ -13,8 +13,7 @@ var cloneCell = function (cell, colspan) {
     }
 };
 
-var toPlainTable = function (element) {
-    var headerCells = element.getElementsByTagName('th');
+var splitCallSpans = function(headerCells){
     for (var i = 0; i < headerCells.length; i++) {
         var th = headerCells[i];
         if (th.hasAttribute('colspan')) {
@@ -23,6 +22,13 @@ var toPlainTable = function (element) {
             cloneCell(th, colspan);
         }
     }
+};
+
+var toPlainTable = function (element) {
+    var headerCells = element.getElementsByTagName('th');
+    splitCallSpans(headerCells);
+    var bodyCells = element.getElementsByTagName('td');
+    splitCallSpans(bodyCells);
 };
 
 module.exports = toPlainTable;
