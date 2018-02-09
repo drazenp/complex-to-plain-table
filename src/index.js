@@ -25,10 +25,8 @@ var splitCallSpans = function(headerCells){
 };
 
 var toPlainTable = function (element) {
-    var headerCells = element.getElementsByTagName('th');
-    splitCallSpans(headerCells);
-    var bodyCells = element.getElementsByTagName('td');
-    splitCallSpans(bodyCells);
+    var cellsWithColspan = element.querySelectorAll('[colspan]');
+    splitCallSpans(cellsWithColspan);
 };
 
 module.exports = toPlainTable;
