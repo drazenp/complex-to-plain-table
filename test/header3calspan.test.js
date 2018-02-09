@@ -38,10 +38,30 @@ describe('toPlainTable', function () {
                 assert.equal(th.hasAttribute('colspan'), false);
                 assert.equal(th.hasAttribute('rowspan'), false);
             });
-            rows[1].querySelectorAll('td').forEach(td => {
+            rows[1].querySelectorAll('th').forEach(th => {
+                assert.equal(th.hasAttribute('colspan'), false);
+                assert.equal(th.hasAttribute('rowspan'), false);
+            });
+            rows[2].querySelectorAll('td').forEach(td => {
                 assert.equal(td.hasAttribute('colspan'), false);
                 assert.equal(td.hasAttribute('rowspan'), false);
             });
+        });
+        it('replicated cells have original attributes', function () {
+            // arrange
+            var table = document.querySelector('table');
+
+            // act
+            toPlainTable(table);
+
+            // assert
+            var firstRowCells = document.querySelectorAll('tr')[0].querySelectorAll('th');
+            assert.equal(firstRowCells[1].getAttribute('class'), 'test');
+            assert.equal(firstRowCells[1].getAttribute('data-test'), 'test');
+            assert.equal(firstRowCells[2].getAttribute('class'), 'test');
+            assert.equal(firstRowCells[2].getAttribute('data-test'), 'test');
+            assert.equal(firstRowCells[3].getAttribute('class'), 'test');
+            assert.equal(firstRowCells[3].getAttribute('data-test'), 'test');
         });
         it('colspan content is replicated', function () {
             // arrange
