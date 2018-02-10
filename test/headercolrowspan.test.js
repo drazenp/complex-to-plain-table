@@ -60,16 +60,16 @@ describe('toPlainTable', function () {
             assert.equal(secondRowCells[3].innerHTML, 'Final');
             assert.equal(secondRowCells[4].innerHTML, '1');
             assert.equal(secondRowCells[5].innerHTML, '2');
-            assert.equal(secondRowCells[6].innerHTML, '3');
+            assert.equal(secondRowCells[6].innerHTML, 'Final');
 
             var thirdRowCells = document.querySelectorAll('tr')[2].querySelectorAll('td');
             assert.equal(thirdRowCells[0].innerHTML, '15%');
             assert.equal(thirdRowCells[1].innerHTML, '15%');
             assert.equal(thirdRowCells[2].innerHTML, '15%');
-            assert.equal(thirdRowCells[0].innerHTML, '15%');
-            assert.equal(thirdRowCells[0].innerHTML, '15%');
-            assert.equal(thirdRowCells[0].innerHTML, '15%');
-            assert.equal(thirdRowCells[0].innerHTML, '15%');
+            assert.equal(thirdRowCells[3].innerHTML, '20%');
+            assert.equal(thirdRowCells[4].innerHTML, '10%');
+            assert.equal(thirdRowCells[5].innerHTML, '10%');
+            assert.equal(thirdRowCells[6].innerHTML, '15%');
         });
     });
 });
