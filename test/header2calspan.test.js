@@ -32,15 +32,8 @@ describe('toPlainTable', function () {
             toPlainTable(table);
 
             // assert
-            var rows = document.querySelectorAll('tr');
-            rows[0].querySelectorAll('th').forEach(th => {
-                assert.equal(th.hasAttribute('colspan'), false);
-                assert.equal(th.hasAttribute('rowspan'), false);
-            });
-            rows[1].querySelectorAll('td').forEach(td => {
-                assert.equal(td.hasAttribute('colspan'), false);
-                assert.equal(td.hasAttribute('rowspan'), false);
-            });
+            assert.equal(document.querySelectorAll('[colspan]').length, 0);
+            assert.equal(document.querySelectorAll('[rowspan]').length, 0);
         });
         it('colspan content is replicated', function () {
             // arrange

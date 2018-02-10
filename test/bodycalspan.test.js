@@ -32,12 +32,8 @@ describe('toPlainTable', function () {
             toPlainTable(table);
 
             // assert
-            document.querySelectorAll('tr').forEach(function (row) {
-                row.querySelectorAll('td').forEach(td => {
-                    assert.equal(td.hasAttribute('colspan'), false);
-                    assert.equal(td.hasAttribute('rowspan'), false);
-                });
-            });
+            assert.equal(document.querySelectorAll('[colspan]').length, 0);
+            assert.equal(document.querySelectorAll('[rowspan]').length, 0);
         });
         it('colspan content is replicated', function () {
             // arrange
