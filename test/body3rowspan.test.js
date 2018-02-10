@@ -57,12 +57,12 @@ describe('toPlainTable', function () {
             assert.equal(secondRowCells[1].innerHTML, 'two');
             assert.equal(secondRowCells[2].innerHTML, 'two');
 
-            var thirdRowCells = document.querySelectorAll('tr')[1].querySelectorAll('td');
+            var thirdRowCells = document.querySelectorAll('tr')[2].querySelectorAll('td');
             assert.equal(thirdRowCells[0].innerHTML, '1');
             assert.equal(thirdRowCells[1].innerHTML, '');
             assert.equal(thirdRowCells[2].innerHTML, 'two');
             
-            var forthRowCells = document.querySelectorAll('tr')[1].querySelectorAll('td');
+            var forthRowCells = document.querySelectorAll('tr')[3].querySelectorAll('td');
             assert.equal(forthRowCells[0].innerHTML, '');
             assert.equal(forthRowCells[1].innerHTML, '');
             assert.equal(forthRowCells[2].innerHTML, 'two');

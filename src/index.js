@@ -19,12 +19,15 @@ var splitCallSpans = function(cells){
     }
 };
 
-var cloneCellDownRows = function(cell, splitRowSpans) {
+var cloneCellDownRows = function(cell, count) {
+    if (count < 2) return;
+
     var nextRow = cell.parentElement.nextElementSibling;
     var nextCell = nextRow.cells[cell.cellIndex];
 
     var newCell = cell.cloneNode(true);
     nextRow.insertBefore(newCell, nextCell);
+    cloneCellDownRows(newCell, --count);
 };
 
 var splitRowSpans = function(cells) {
