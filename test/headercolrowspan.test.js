@@ -36,7 +36,7 @@ describe('toPlainTable', function () {
             assert.equal(document.querySelectorAll('[colspan]').length, 0);
             assert.equal(document.querySelectorAll('[rowspan]').length, 0);
         });
-        it('colspan content is replicated', function () {
+        it('colspan and rowspan content is replicated', function () {
             // arrange
             var table = document.querySelector('table');
 
