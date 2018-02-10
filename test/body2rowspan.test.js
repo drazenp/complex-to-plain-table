@@ -50,12 +50,12 @@ describe('toPlainTable', function () {
             var firstRowCells = document.querySelectorAll('tr')[0].querySelectorAll('td');
             assert.equal(firstRowCells[0].innerHTML, '1');
             assert.equal(firstRowCells[1].innerHTML, '2');
-            assert.equal(firstRowCells[2].innerHTML, 'one ');
+            assert.equal(firstRowCells[2].innerHTML, ' one');
 
             var secondRowCells = document.querySelectorAll('tr')[1].querySelectorAll('td');
             assert.equal(secondRowCells[0].innerHTML, '1');
             assert.equal(secondRowCells[1].innerHTML, '2');
-            assert.equal(secondRowCells[2].innerHTML, ' two');
+            assert.equal(secondRowCells[2].innerHTML, 'two ');
         });
     });
 });
