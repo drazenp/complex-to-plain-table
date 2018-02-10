@@ -25,7 +25,6 @@ var cloneCellDownRows = function(cell, splitRowSpans) {
 
     var newCell = cell.cloneNode(true);
     nextRow.insertBefore(newCell, nextCell);
-    //document.getElementById('table1').rows[rowIndex].cells[cellIndex];
 };
 
 var splitRowSpans = function(cells) {
