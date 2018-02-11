@@ -4,14 +4,14 @@ var jsdom = require("jsdom");
 var { document } = (new jsdom.JSDOM('<!DOCTYPE html><body></body></html>')).window;
 var fs = require('fs');
 
-var _table = fs.readFileSync('./test/spanincolgroup.html', 'utf8');
+var _table = fs.readFileSync('./test/colgroupscope.html', 'utf8');
 
 describe('toPlainTable', function () {
     beforeEach(function () {
         document.body.innerHTML = _table;
     });
 
-    describe('table with span in colgroup', function () {
+    describe('table with colgroup scope', function () {
         it('has equal number of cells in the rows', function () {
             // arrange
             var table = document.querySelector('table');
