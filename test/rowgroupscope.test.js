@@ -69,33 +69,33 @@ describe('toPlainTable', function () {
             assert.equal(secondRowCells[3].innerHTML, 'A3');
             assert.equal(secondRowCells[4].innerHTML, 'A4');
         
-            var secondRowCells = document.querySelectorAll('tr')[2].cells;
-            assert.equal(secondRowCells[0].innerHTML, 'Zodiac');
-            assert.equal(secondRowCells[1].innerHTML, 'Black and white');
-            assert.equal(secondRowCells[2].innerHTML, 'A1');
-            assert.equal(secondRowCells[3].innerHTML, 'A2');
-            assert.equal(secondRowCells[4].innerHTML, 'A3');
+            var thirdRowCells = document.querySelectorAll('tr')[2].cells;
+            assert.equal(thirdRowCells[0].innerHTML, 'Zodiac');
+            assert.equal(thirdRowCells[1].innerHTML, 'Black and white');
+            assert.equal(thirdRowCells[2].innerHTML, 'A1');
+            assert.equal(thirdRowCells[3].innerHTML, 'A2');
+            assert.equal(thirdRowCells[4].innerHTML, 'A3');
 
-            var secondRowCells = document.querySelectorAll('tr')[3].cells;
-            assert.equal(secondRowCells[0].innerHTML, 'Zodiac');
-            assert.equal(secondRowCells[1].innerHTML, 'Sepia');
-            assert.equal(secondRowCells[2].innerHTML, 'A3');
-            assert.equal(secondRowCells[3].innerHTML, 'A4');
-            assert.equal(secondRowCells[4].innerHTML, 'A5');
+            var fourthRowCells = document.querySelectorAll('tr')[3].cells;
+            assert.equal(fourthRowCells[0].innerHTML, 'Zodiac');
+            assert.equal(fourthRowCells[1].innerHTML, 'Sepia');
+            assert.equal(fourthRowCells[2].innerHTML, 'A3');
+            assert.equal(fourthRowCells[3].innerHTML, 'A4');
+            assert.equal(fourthRowCells[4].innerHTML, 'A5');
 
-            var secondRowCells = document.querySelectorAll('tr')[4].cells;
-            assert.equal(secondRowCells[0].innerHTML, 'Angels');
-            assert.equal(secondRowCells[1].innerHTML, 'Black and white');
-            assert.equal(secondRowCells[2].innerHTML, 'A1');
-            assert.equal(secondRowCells[3].innerHTML, 'A3');
-            assert.equal(secondRowCells[4].innerHTML, 'A4');
+            var fifthRowCells = document.querySelectorAll('tr')[4].cells;
+            assert.equal(fifthRowCells[0].innerHTML, 'Angels');
+            assert.equal(fifthRowCells[1].innerHTML, 'Black and white');
+            assert.equal(fifthRowCells[2].innerHTML, 'A1');
+            assert.equal(fifthRowCells[3].innerHTML, 'A3');
+            assert.equal(fifthRowCells[4].innerHTML, 'A4');
 
-            var secondRowCells = document.querySelectorAll('tr')[5].cells;
-            assert.equal(secondRowCells[0].innerHTML, 'Angels');
-            assert.equal(secondRowCells[1].innerHTML, 'Sepia');
-            assert.equal(secondRowCells[2].innerHTML, 'A2');
-            assert.equal(secondRowCells[3].innerHTML, 'A3');
-            assert.equal(secondRowCells[4].innerHTML, 'A5');
+            var sixthRowCells = document.querySelectorAll('tr')[5].cells;
+            assert.equal(sixthRowCells[0].innerHTML, 'Angels');
+            assert.equal(sixthRowCells[1].innerHTML, 'Sepia');
+            assert.equal(sixthRowCells[2].innerHTML, 'A2');
+            assert.equal(sixthRowCells[3].innerHTML, 'A3');
+            assert.equal(sixthRowCells[4].innerHTML, 'A5');
         });
     });
 });
