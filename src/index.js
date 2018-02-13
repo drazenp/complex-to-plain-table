@@ -24,10 +24,9 @@ var splitCells = function(element, spanAttribute, cloneCell) {
     for (var i = 0; i < cellsWithSpanAttribute.length; i++) {
         var cell = cellsWithSpanAttribute[i];
         if (cell.hasAttribute(spanAttribute)) {
-            var rowspan = cell.getAttribute(spanAttribute);
+            var count = cell.getAttribute(spanAttribute);
             cell.removeAttribute(spanAttribute);
-            cloneCell(cell, rowspan);
-            //cloneCellDownRows(cell, rowspan);
+            cloneCell(cell, +count);
         }
     }
 };
