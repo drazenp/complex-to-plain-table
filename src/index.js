@@ -8,17 +8,6 @@ var cloneCellToRight = function (cell, colspan) {
     }
 };
 
-var splitCallSpans = function(cells){
-    for (var i = 0; i < cells.length; i++) {
-        var cell = cells[i];
-        if (cell.hasAttribute('colspan')) {
-            var colspan = cell.getAttribute('colspan');
-            cell.removeAttribute('colspan');
-            cloneCellToRight(cell, colspan);
-        }
-    }
-};
-
 var cloneCellDownRows = function(cell, count) {
     if (count < 2) return;
 
@@ -30,22 +19,22 @@ var cloneCellDownRows = function(cell, count) {
     cloneCellDownRows(newCell, --count);
 };
 
-var splitRowSpans = function(cells) {
-    for (var i = 0; i < cells.length; i++) {
-        var cell = cells[i];
-        if (cell.hasAttribute('rowspan')) {
-            var rowspan = cell.getAttribute('rowspan');
-            cell.removeAttribute('rowspan');
-            cloneCellDownRows(cell, rowspan);
+var splitCells = function(element, spanAttribute, cloneCell) {
+    var cellsWithSpanAttribute = element.querySelectorAll('[' + spanAttribute +']');
+    for (var i = 0; i < cellsWithSpanAttribute.length; i++) {
+        var cell = cellsWithSpanAttribute[i];
+        if (cell.hasAttribute(spanAttribute)) {
+            var rowspan = cell.getAttribute(spanAttribute);
+            cell.removeAttribute(spanAttribute);
+            cloneCell(cell, rowspan);
+            //cloneCellDownRows(cell, rowspan);
         }
     }
 };
 
 var toPlainTable = function (element) {
-    var cellsWithColspan = element.querySelectorAll('[colspan]');
-    splitCallSpans(cellsWithColspan);
-    var cellsWithRowspan = element.querySelectorAll('[rowspan]');
-    splitRowSpans(cellsWithRowspan);
+    splitCells(element, 'colspan', cloneCellToRight);
+    splitCells(element, 'rowspan', cloneCellDownRows);
 };
 
 module.exports = toPlainTable;
