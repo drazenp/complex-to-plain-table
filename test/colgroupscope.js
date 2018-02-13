@@ -6,7 +6,7 @@ var fs = require('fs');
 
 var _table = fs.readFileSync('./test/colgroupscope.html', 'utf8');
 
-describe('toPlainTable', function () {
+describe.skip('toPlainTable', function () {
     beforeEach(function () {
         document.body.innerHTML = _table;
     });
