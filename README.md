@@ -21,7 +21,7 @@ complexToPlainTable(document.querySelector('table'));
 Table input:
 
 ```html
-<table border="1">
+<table>
     <tr>
         <td colspan="3">1</td>
         <td>4</td>
@@ -49,7 +49,7 @@ Table input:
     </tr>
 </table>
 ```
-<table border="1">
+<table>
     <tr>
         <td colspan="3">1</td>
         <td>4</td>
@@ -80,7 +80,7 @@ Table input:
 Table output:
 
 ```html
-<table border="1">
+<table>
     <tbody>
         <tr>
             <td>1</td>
@@ -120,7 +120,7 @@ Table output:
     </tbody>
 </table>
 ```
-<table border="1">
+<table>
     <tbody>
         <tr>
             <td>1</td>
