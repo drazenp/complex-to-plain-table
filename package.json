@@ -7,7 +7,13 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "lint": "eslint src/index.js",
+    "dist": "rm -fr dist && mkdir dist",
+    "copy": "cp src/index.js dist/compexToPlainTable.js",
+    "uglify": "uglifyjs src/index.js -m -o dist/compexToPlainTable.min.js",
+    "test": "mocha",
+    "build": "npm run lint && npm run test && npm run dist && npm run copy && npm run uglify",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -21,7 +27,9 @@
   "homepage": "https://github.com/drazenp/complex-to-plain-table#readme",
   "devDependencies": {
     "chai": "^4.1.2",
+    "eslint": "^4.17.0",
     "jsdom": "^11.6.2",
-    "mocha": "^5.0.0"
+    "mocha": "^5.0.0",
+    "uglify-js": "^3.3.10"
   }
 }
