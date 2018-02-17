@@ -13,7 +13,7 @@
     "uglify": "uglifyjs src/index.js -m -o dist/compexToPlainTable.min.js",
     "test": "mocha",
     "build": "npm run lint && npm run test && npm run dist && npm run copy && npm run uglify",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
