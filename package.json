@@ -12,7 +12,7 @@
     "copy": "cp src/index.js dist/compexToPlainTable.js",
     "uglify": "uglifyjs src/index.js -m -o dist/compexToPlainTable.min.js",
     "test": "mocha",
-    "build": "npm run lint && npm run test && npm run dist && npm run copy && npm run uglify",
+    "build": "npm run lint && npm run dist && npm run copy && npm run uglify",
     "prepublishOnly": "npm run build"
   },
   "repository": {
