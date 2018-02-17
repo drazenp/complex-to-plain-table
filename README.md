@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/drazenp/complex-to-plain-table.svg?branch=master)](https://travis-ci.org/drazenp/complex-to-plain-table)
-
+[![Coverage Status](https://coveralls.io/repos/github/drazenp/complex-to-plain-table/badge.svg?branch=master)](https://coveralls.io/github/drazenp/complex-to-plain-table?branch=master)
 # Complex To Plain Table
 JavaScript library which can be used to simplify complex tables by splitting
 merged cells.
