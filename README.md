@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/drazenp/complex-to-plain-table.svg?branch=master)](https://travis-ci.org/drazenp/complex-to-plain-table)
+
 # Complex To Plain Table
 JavaScript library which can be used to simplify complex tables by splitting
 merged cells.
