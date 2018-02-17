@@ -2,23 +2,21 @@
     'use strict';
     var toPlainTable = (function () {
         var toPlainTable = function (element) {
-            _splitCells(element, 'colspan', cloneCellToRight);
-            _splitCells(element, 'rowspan', cloneCellDownRows);
+            _splitCells(element, 'colspan', _cloneCellToRight);
+            _splitCells(element, 'rowspan', _cloneCellDownRows);
         };
 
-        var _splitCells = function (element, spanAttribute, cloneCell) {
+        var _splitCells = function (element, spanAttribute, cloneCellCallback) {
             var cellsWithSpanAttribute = element.querySelectorAll('[' + spanAttribute + ']');
             for (var i = 0; i < cellsWithSpanAttribute.length; i++) {
                 var cell = cellsWithSpanAttribute[i];
-                if (cell.hasAttribute(spanAttribute)) {
-                    var count = cell.getAttribute(spanAttribute);
-                    cell.removeAttribute(spanAttribute);
-                    cloneCell(cell, +count);
-                }
+                var count = cell.getAttribute(spanAttribute);
+                cell.removeAttribute(spanAttribute);
+                cloneCellCallback(cell, +count);
             }
         };
 
-        var cloneCellToRight = function (cell, colspan) {
+        var _cloneCellToRight = function (cell, colspan) {
             var parent = cell.parentElement;
 
             for (var i = 1; i < colspan; i++) {
@@ -27,7 +25,7 @@
             }
         };
 
-        var cloneCellDownRows = function (cell, count) {
+        var _cloneCellDownRows = function (cell, count) {
             if (count < 2) return;
 
             var nextRow = cell.parentElement.nextElementSibling;
@@ -35,7 +33,7 @@
 
             var newCell = cell.cloneNode(true);
             nextRow.insertBefore(newCell, nextCell);
-            cloneCellDownRows(newCell, --count);
+            _cloneCellDownRows(newCell, --count);
         };
 
         return toPlainTable;
